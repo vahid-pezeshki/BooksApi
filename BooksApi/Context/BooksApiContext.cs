@@ -1,4 +1,4 @@
-﻿using BooksApi.Models;
+﻿using BooksApi.Context.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace BooksApi.Context
@@ -9,7 +9,7 @@ namespace BooksApi.Context
         {
         }
 
-        // tables
-        public DbSet<BookDto> Books { get; set; }
+        // add tables
+        public DbSet<Book> Books { get; set; }
     }
 }
