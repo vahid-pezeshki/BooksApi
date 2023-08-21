@@ -10,8 +10,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// inject DbContext Service
-builder.Services.AddDbContext<BooksApiContext>(options => options.UseInMemoryDatabase("BooksDb"));
+
+builder.Services.AddDbContext<BooksApiContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+
+
+// builder.Services.AddDbContext<BooksApiContext>(options =>
+//    options.UseSqlServer(builder.Configuration.GetConnectionString("BooksApi")));
 
 
 var app = builder.Build();

@@ -1,13 +1,22 @@
-﻿namespace BooksApi.Context.Entities
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace BooksApi.Context.Entities
 {
     public class AddBookRequest
     {
-        public string ISBN { get; set; }
-        public string Title { get; set; }
-        public string Author { get; set; }
+        public string ISBN { get; set; } = null!;
+
+        public string Title { get; set; } = null!;
+
+        public string Author { get; set; } = null!;
+
         public DateTime PublishedDate { get; set; }
-        public string Description { get; set; }
-        public decimal Price { get; set; }
-        public bool IsAvailable { get; set; }
+
+        public string Description { get; set; } = null!;
+
+        public decimal? Price { get; set; }
+
+        public bool? IsAvailable { get; set; }
     }
 }
