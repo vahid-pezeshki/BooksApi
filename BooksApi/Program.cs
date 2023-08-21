@@ -17,10 +17,6 @@ builder.Services.AddDbContext<BooksApiContext>(options =>
 });
 
 
-// builder.Services.AddDbContext<BooksApiContext>(options =>
-//    options.UseSqlServer(builder.Configuration.GetConnectionString("BooksApi")));
-
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
